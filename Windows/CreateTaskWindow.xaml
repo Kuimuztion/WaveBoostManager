@@ -1,0 +1,44 @@
+<Window x:Class="WaveBoostManager.Windows.CreateTaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Style="{StaticResource BaseWindowStyle}"
+        Title="创建新板块" Height="520" Width="480"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="28">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="创建新板块" FontSize="20" FontWeight="Bold"
+                   Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,20"/>
+
+        <StackPanel Grid.Row="1" Margin="0,0,0,16">
+            <TextBlock Text="板块标题（例如：肝200抽）" Style="{StaticResource FieldLabelStyle}"/>
+            <TextBox x:Name="TxtTitle" Style="{StaticResource InputBoxStyle}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Margin="0,0,0,16">
+            <TextBlock Text="委托人 / 号主信息（联系方式、备注名等，可选）" Style="{StaticResource FieldLabelStyle}"/>
+            <TextBox x:Name="TxtRequester" Style="{StaticResource InputBoxStyle}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Margin="0,0,0,8">
+            <TextBlock Text="详细需求 / 初始笔录" Style="{StaticResource FieldLabelStyle}"/>
+        </StackPanel>
+
+        <TextBox Grid.Row="4" x:Name="TxtDescription" Style="{StaticResource InputBoxStyle}"
+                 AcceptsReturn="True" TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Top"/>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Content="取消" Style="{StaticResource SecondaryBtnStyle}" Click="BtnCancel_Click" Margin="0,0,10,0"/>
+            <Button Content="创建板块" Style="{StaticResource PrimaryBtnStyle}" Click="BtnCreate_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
