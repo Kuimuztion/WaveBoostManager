@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>WaveBoostManager</AssemblyName>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <RootNamespace>WaveBoostManager</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <!--
+    把 App.xaml 从默认的 ApplicationDefinition 改成 Page，
+    这样 WPF SDK 就不会再自动生成 Main() 入口，
+    改由我们自己在 Program.cs 里写 Main()，把启动过程完整包进 try/catch，
+    确保任何阶段（哪怕是 App 自己构造/InitializeComponent）崩溃都能被捕获显示出来。
+  -->
+  <ItemGroup>
+    <ApplicationDefinition Remove="App.xaml" />
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
+</Project>
