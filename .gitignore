@@ -1,0 +1,11 @@
+# Build output and binary artifacts
+builds/
+
+# Local tests
+tests/
+
+# Object and temporary files
+*.o
+*.swp
+*~
+.DS_Store
